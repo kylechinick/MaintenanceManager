@@ -1,97 +1,33 @@
-div#footer {
-  position:fixed;
-  bottom:0px;
-  left:0px;
-  width:100%;
-  color: rgb(255, 255, 255);
-  background-color:rgb(255, 94, 0);
-  padding:8px;
-  border-color:rgb(255, 94, 0);
-  border-style: solid;
-  border-width: 3px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-div#header {
-  position:fixed;
-  top:0px;
-  left:0px;
-  text-align: left;
-  width:100%;
-  color: rgb(0, 0, 0);
-  background:rgb(255, 255, 255);
-  padding:15px;
-  padding-left: 35px;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 900;
-  font-size: 75px;
-  /* border-color:rgb(255, 94, 0);
-  border-style: solid;
-  border-width: 3px; */
+.flex-column--center-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  border: 2px solid limegreen;
 }
 
-h1 {
-  color: rgb(0, 0, 0);
-  padding-top: 10px;
-  padding-bottom: 10px;
+/* .flex-column--start-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+} */
+
+.flex-row--start-start {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-h2 {
-  color: rgb(0, 0, 0);
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-h3 {
-  color: rgb(0, 0, 0);
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-a:link {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-a:visited {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-a:hover {
-  color:rgb(247, 118, 43);
-  text-decoration: none;
-}
-
-a:active {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-body {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 300;
-}
-
-main {
-  margin-top: 200px;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: left;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 300;
-  background:rgb(255, 255, 255);
-  padding: 35px;
-  border-radius: 5px;
-  border-color:rgb(255, 94, 0);
-  border-style: solid;
-  border-width: 3px;
-}
-
-.btn {
-  background:rgb(255, 94, 0);
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-  border-color:rgb(255, 255, 255);
-  border-style: double;
-  border-width: 1px;
+#menu {
+  width: 100%;
+  padding: 1rem;
+  background-color: red;
 }
