@@ -8,11 +8,11 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
+  @Html.LabelFor(model => model.EngineerName)
+  @Html.TextBoxFor(model => model.EngineerName)
 
-  @Html.LabelFor(m => m.Birthdate)
-  @Html.TextBoxFor(m => m.Birthdate, new {type="date", @class="form-control"})
+  @Html.LabelFor(m => m.EngineerEmploymentStartDate)
+  @Html.TextBoxFor(m => m.EngineerEmploymentStartDate, new {type="date", @class="form-control"})
 
 
   @Html.Label("Add a machine that this engineer is licensed to repair")

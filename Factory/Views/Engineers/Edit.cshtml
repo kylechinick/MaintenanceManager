@@ -6,17 +6,17 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this task: @Html.DisplayFor(model => model.Description)</h4>
+<h4>Edit this task: @Html.DisplayFor(model => model.EngineerName)</h4>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.LabelFor(model => model.Description)
-    @Html.EditorFor(model => model.Description)
+    @Html.LabelFor(model => model.EngineerName)
+    @Html.EditorFor(model => model.EngineerName)
 
-    @Html.LabelFor(model => model.Birthdate)
-    @Html.EditorFor(model => model.Birthdate)
+    @Html.LabelFor(model => model.EngineerEmploymentStartDate)
+    @Html.EditorFor(model => model.EngineerEmploymentStartDate)
 
     @Html.Label("Add a machine that this engineer is licensed to repair")
     @Html.DropDownList("MachineId")

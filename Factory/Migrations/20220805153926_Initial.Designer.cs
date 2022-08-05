@@ -8,98 +8,98 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Factory.Migrations
 {
-    [DbContext(typeof(FactoryContext))]
-    [Migration("20220805153926_Initial")]
-    partial class Initial
+  [DbContext(typeof(FactoryContext))]
+  [Migration("20220805153926_Initial")]
+  partial class Initial
+  {
+    protected override void BuildTargetModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.0");
+      modelBuilder
+          .HasAnnotation("Relational:MaxIdentifierLength", 64)
+          .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Factory.Models.Engineer", b =>
-                {
-                    b.Property<int>("EngineerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+      modelBuilder.Entity("Factory.Models.Engineer", b =>
+          {
+            b.Property<int>("EngineerId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("int");
 
-                    b.Property<DateTime>("Birthdate")
-                        .HasColumnType("datetime(6)");
+            b.Property<DateTime>("EngineerEmploymentStartDate")
+                      .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+            b.Property<string>("EngineerName")
+                      .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("EngineerId");
+            b.HasKey("EngineerId");
 
-                    b.ToTable("Engineers");
-                });
+            b.ToTable("Engineers");
+          });
 
-            modelBuilder.Entity("Factory.Models.Machine", b =>
-                {
-                    b.Property<int>("MachineId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+      modelBuilder.Entity("Factory.Models.Machine", b =>
+          {
+            b.Property<int>("MachineId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+            b.Property<string>("Name")
+                      .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("MachineId");
+            b.HasKey("MachineId");
 
-                    b.ToTable("Machines");
-                });
+            b.ToTable("Machines");
+          });
 
-            modelBuilder.Entity("Factory.Models.MachineEngineer", b =>
-                {
-                    b.Property<int>("MachineEngineerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+      modelBuilder.Entity("Factory.Models.MachineEngineer", b =>
+          {
+            b.Property<int>("MachineEngineerId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("int");
 
-                    b.Property<int>("EngineerId")
-                        .HasColumnType("int");
+            b.Property<int>("EngineerId")
+                      .HasColumnType("int");
 
-                    b.Property<int>("MachineId")
-                        .HasColumnType("int");
+            b.Property<int>("MachineId")
+                      .HasColumnType("int");
 
-                    b.HasKey("MachineEngineerId");
+            b.HasKey("MachineEngineerId");
 
-                    b.HasIndex("EngineerId");
+            b.HasIndex("EngineerId");
 
-                    b.HasIndex("MachineId");
+            b.HasIndex("MachineId");
 
-                    b.ToTable("MachineEngineer");
-                });
+            b.ToTable("MachineEngineer");
+          });
 
-            modelBuilder.Entity("Factory.Models.MachineEngineer", b =>
-                {
-                    b.HasOne("Factory.Models.Engineer", "Engineer")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("EngineerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+      modelBuilder.Entity("Factory.Models.MachineEngineer", b =>
+          {
+            b.HasOne("Factory.Models.Engineer", "Engineer")
+                      .WithMany("JoinEntities")
+                      .HasForeignKey("EngineerId")
+                      .OnDelete(DeleteBehavior.Cascade)
+                      .IsRequired();
 
-                    b.HasOne("Factory.Models.Machine", "Machine")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("MachineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            b.HasOne("Factory.Models.Machine", "Machine")
+                      .WithMany("JoinEntities")
+                      .HasForeignKey("MachineId")
+                      .OnDelete(DeleteBehavior.Cascade)
+                      .IsRequired();
 
-                    b.Navigation("Engineer");
+            b.Navigation("Engineer");
 
-                    b.Navigation("Machine");
-                });
+            b.Navigation("Machine");
+          });
 
-            modelBuilder.Entity("Factory.Models.Engineer", b =>
-                {
-                    b.Navigation("JoinEntities");
-                });
+      modelBuilder.Entity("Factory.Models.Engineer", b =>
+          {
+            b.Navigation("JoinEntities");
+          });
 
-            modelBuilder.Entity("Factory.Models.Machine", b =>
-                {
-                    b.Navigation("JoinEntities");
-                });
+      modelBuilder.Entity("Factory.Models.Machine", b =>
+          {
+            b.Navigation("JoinEntities");
+          });
 #pragma warning restore 612, 618
-        }
     }
+  }
 }
