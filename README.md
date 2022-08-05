@@ -1,6 +1,6 @@
 # MaintenanceManager
 
-By _**Kyle Chinick**_
+Author: _**Kyle Chinick**_
 
 Maintenance management application: tracks repairs and resources for factory operations.
 
@@ -17,7 +17,7 @@ Maintenance management application: tracks repairs and resources for factory ope
 
 ## Description
 
-The MaintenanceMangement app provides factory operations managers with a database tool to track machine and engineer/repair tech statuses for their factory.
+The MaintenanceManager app provides factory operations managers with a database tool to track machine and engineer/repair tech statuses for their factory.
 
 Users can add machines to the database and assign licensed engineers to that machine as its repair tech.
 
