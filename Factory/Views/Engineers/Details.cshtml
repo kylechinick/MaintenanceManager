@@ -2,28 +2,35 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer
+@model Factory.Models.Engineer;
 
-<h2>Engineer Details</h2>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
-<h4>@Html.DisplayNameFor(model => model.EngineerEmploymentStartDate): @Html.DisplayFor(model => model.EngineerEmploymentStartDate)</h4>
+<main>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This engineer does not belong to any machines</p>
-}
-else
-{
-  <h4>Machines this engineer is licensed to repair:</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
+  <h2>Engineer Details</h2>
+
+  <hr />
+
+  <h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
+  <h4>@Html.DisplayNameFor(model => model.EngineerEmploymentStartDate): @Html.DisplayFor(model => model.EngineerEmploymentStartDate)</h4>
+
+  @if(@Model.JoinEntities.Count == 0)
   {
-    <li>@join.Machine.MachineName</li>
+    <p>This engineer is not assigned to any machines</p>
   }
-  </ul>
-}
+  else
+  {
+    <h4>Machines this engineer is licensed to repair:</h4>
+    <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Machine.MachineName</li>
+    }
+    </ul>
+  }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+  <p>@Html.ActionLink("Back to list", "Index")</p>
+  
+  <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+
+  <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+</main>

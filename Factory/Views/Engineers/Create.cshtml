@@ -2,23 +2,27 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer
+@model Factory.Models.Engineer;
 
-<h4>Add a new task</h4>
+<main>
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.EngineerName)
-  @Html.TextBoxFor(model => model.EngineerName)
+  <h4>Add a new task</h4>
 
-  @Html.LabelFor(m => m.EngineerEmploymentStartDate)
-  @Html.TextBoxFor(m => m.EngineerEmploymentStartDate, new {type="date", @class="form-control"})
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.EngineerName)
+    @Html.TextBoxFor(model => model.EngineerName)
 
-
-  @Html.Label("Add a machine that this engineer is licensed to repair")
-  @Html.DropDownList("MachineId")
+    @Html.LabelFor(m => m.EngineerEmploymentStartDate)
+    @Html.TextBoxFor(m => m.EngineerEmploymentStartDate, new {type="date", @class="form-control"})
 
 
-  <input type="submit" value="Add new engineer" class="btn btn-default" />
-}
-<p>@Html.ActionLink("Show all engineers", "Index")</p>
+    @Html.Label("Add a machine that this engineer is licensed to repair")
+    @Html.DropDownList("MachineId")
+
+
+    <input type="submit" value="Add new engineer" class="btn btn-default" />
+  }
+
+  <p>@Html.ActionLink("Show all engineers", "Index")</p>
+</main>

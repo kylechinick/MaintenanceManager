@@ -2,21 +2,25 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer
+@model Factory.Models.Engineer;
 
-<h2>Add a machine</h2>
+<main>
 
-<h4>Add a machine to this licensed engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
+  <h2>Add a machine</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.EngineerId)
+  <h4>Add a machine to this licensed engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
 
-    @Html.Label("Select machine")
-    @Html.DropDownList("MachineId")
+  @using (Html.BeginForm())
+  {
+      @Html.HiddenFor(model => model.EngineerId)
 
-    <input type="submit" value="Save" />
-}
+      @Html.Label("Select machine")
+      @Html.DropDownList("MachineId")
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
+      <input type="submit" value="Save" />
+  }
+
+  <p>@Html.ActionLink("Back to list", "Index")</p>
+
+  <p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
+</main>

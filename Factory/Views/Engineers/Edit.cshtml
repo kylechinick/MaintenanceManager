@@ -2,26 +2,29 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer
+@model Factory.Models.Engineer;
 
-<h2>Edit</h2>
+<main>
 
-<h4>Edit this task: @Html.DisplayFor(model => model.EngineerName)</h4>
+  <h2>Edit</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.EngineerId)
+  <h4>Edit this task: @Html.DisplayFor(model => model.EngineerName)</h4>
 
-    @Html.LabelFor(model => model.EngineerName)
-    @Html.EditorFor(model => model.EngineerName)
+  @using (Html.BeginForm())
+  {
+      @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.LabelFor(model => model.EngineerEmploymentStartDate)
-    @Html.EditorFor(model => model.EngineerEmploymentStartDate)
+      @Html.LabelFor(model => model.EngineerName)
+      @Html.EditorFor(model => model.EngineerName)
 
-    @Html.Label("Add a machine that this engineer is licensed to repair")
-    @Html.DropDownList("MachineId")
+      @Html.LabelFor(model => model.EngineerEmploymentStartDate)
+      @Html.EditorFor(model => model.EngineerEmploymentStartDate)
 
-    <input type="submit" value="Save" />
-}
+      @Html.Label("Add a machine that this engineer is licensed to repair")
+      @Html.DropDownList("MachineId")
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+      <input type="submit" value="Save" />
+  }
+
+  <p>@Html.ActionLink("Back to list", "Index")</p>
+</main>

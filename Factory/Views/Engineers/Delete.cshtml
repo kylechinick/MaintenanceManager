@@ -2,15 +2,19 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer
+@model Factory.Models.Engineer;
 
-<h2>Are you sure you want to delete this?</h2>
+<main>
 
-@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
+  <h2>Are you sure you want to delete this?</h2>
+
+  @Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)
+
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" />
+  }
+
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
@@ -22,4 +26,6 @@
     }
   }
   </ul>
-@Html.ActionLink("Back to List", "Index")
+
+  @Html.ActionLink("Back to List", "Index")
+</main>

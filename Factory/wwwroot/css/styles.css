@@ -100,3 +100,21 @@ a:active,
 a:active > span {
   color: #ffc299;
 }
+
+@media (min-width: 522px) {
+  #home-hero-h1 {
+    font-size: 3rem;
+  }
+}
+
+.hero-link {
+  font-size: 1.6rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+ul {
+  padding-left: 1rem;
+}
